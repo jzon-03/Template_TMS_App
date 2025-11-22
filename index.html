@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom TMS - Tooling Management System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <h1>Custom TMS</h1>
+            </div>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search tools, maintenance records, users..." id="globalSearch">
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="notifications">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                </button>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <img src="assets/img/default-avatar.png" alt="User" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="avatar-fallback" style="display: none;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <span class="user-name">John Doe</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <ul class="nav-menu">
+            <li class="nav-item active">
+                <a href="#dashboard" class="nav-link" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#inventory" class="nav-link" data-page="inventory">
+                    <i class="fas fa-box"></i>
+                    <span>Tool Inventory</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#maintenance" class="nav-link" data-page="maintenance">
+                    <i class="fas fa-wrench"></i>
+                    <span>Maintenance</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#checkout" class="nav-link" data-page="checkout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Check Out/In</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#users" class="nav-link" data-page="users">
+                    <i class="fas fa-users"></i>
+                    <span>User Management</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#reports" class="nav-link" data-page="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#settings" class="nav-link" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="system-status">
+                <div class="status-indicator online"></div>
+                <span>System Online</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="page active">
+            <div class="page-header">
+                <h2>Dashboard</h2>
+                <div class="page-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Quick Add Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>1,247</h3>
+                        <p>Total Tools</p>
+                        <span class="metric-change positive">+12 this month</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>89</h3>
+                        <p>Checked Out</p>
+                        <span class="metric-change neutral">7% of total</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>23</h3>
+                        <p>Maintenance Due</p>
+                        <span class="metric-change negative">5 overdue</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>$124K</h3>
+                        <p>Total Value</p>
+                        <span class="metric-change positive">+$8K this year</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Recent Activity -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card chart-card">
+                    <div class="card-header">
+                        <h3>Tool Usage Trends</h3>
+                        <select class="chart-period">
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                            <option>Last year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="usageChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon checkout">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Mike Johnson</strong> checked out Drill Press #DP-001</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon maintenance">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Maintenance</strong> completed on Lathe #LT-003</p>
+                                <span class="activity-time">4 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon checkin">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Sarah Wilson</strong> returned Welding Gun #WG-012</p>
+                                <span class="activity-time">6 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts and Quick Actions -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card alerts-card">
+                    <div class="card-header">
+                        <h3>System Alerts</h3>
+                        <span class="alert-count">3</span>
+                    </div>
+                    <div class="alerts-list">
+                        <div class="alert-item high-priority">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <div>
+                                <p>Tool #MT-007 is 5 days overdue for maintenance</p>
+                                <button class="btn-link">Schedule Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="alert-item medium-priority">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <p>3 tools due for calibration this week</p>
+                                <button class="btn-link">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <div class="alert-item low-priority">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <p>Monthly inventory report is ready</p>
+                                <button class="btn-link">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card quick-actions-card">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Tool</span>
+                        </button>
+                        
+                        <button class="quick-action-btn">
+                            <i class="fas fa-search"></i>
+                            <span>Find Tool</span>
+                        </button>
+                        
+                        <button class="quick-action-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Schedule Maintenance</span>
+                        </button>
+                        
+                        <button class="quick-action-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Generate Report</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional pages will be loaded here dynamically -->
+        <section id="inventory-page" class="page">
+            <!-- Tool Inventory content will be added -->
+        </section>
+        
+        <section id="maintenance-page" class="page">
+            <!-- Maintenance content will be added -->
+        </section>
+        
+        <section id="checkout-page" class="page">
+            <!-- Check out/in content will be added -->
+        </section>
+        
+        <section id="users-page" class="page">
+            <!-- User management content will be added -->
+        </section>
+        
+        <section id="reports-page" class="page">
+            <!-- Reports content will be added -->
+        </section>
+        
+        <section id="settings-page" class="page">
+            <!-- Settings content will be added -->
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Modal content will be dynamically loaded -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancel</button>
+                <button class="btn btn-primary modal-confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

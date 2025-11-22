@@ -1,0 +1,37 @@
+{
+  "name": "custom-tms",
+  "version": "1.0.0",
+  "description": "Custom Tooling Management System - A comprehensive web application for managing tools, equipment, and resources",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "dev": "npx live-server --port=8080",
+    "build": "echo 'No build process needed for static files'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "tool-management",
+    "inventory",
+    "maintenance",
+    "dashboard",
+    "equipment-tracking",
+    "web-app"
+  ],
+  "author": "Custom TMS Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/custom-tms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/custom-tms/issues"
+  },
+  "homepage": "https://github.com/your-username/custom-tms#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

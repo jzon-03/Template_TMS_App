@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Default Avatar</title>
+</head>
+<body style="margin:0; background: linear-gradient(135deg, #2563eb, #1d4ed8); display: flex; align-items: center; justify-content: center; height: 64px; width: 64px;">
+    <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H16V18H18V22H21V11C21 9.9 20.1 9 19 9H21ZM5 11V7C5 5.9 5.9 5 7 5H9C10.1 5 11 5.9 11 7V11C11 12.1 10.1 13 9 13H7C5.9 13 5 12.1 5 11Z"/>
+    </svg>
+</body>
+</html>
